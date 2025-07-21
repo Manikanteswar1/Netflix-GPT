@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { Bg_URL, photoURL } from "../utils/constants";
+import Footer from "./Footer";
 const Login = () => {
   const [signIn, setSignIn] = useState(true);
   const dispatch = useDispatch();
@@ -82,18 +83,19 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div className="min-h-screen flex flex-col relative">
       <Header />
-      <div className="absolute">
+      <div className="absolute inset-0 -z-10">
         <img
           className="w-full h-screen md:h-full object-cover"
           src={Bg_URL}
           alt="background"
         />
       </div>
+      <div className="flex-grow flex items-center justify-center px-4">
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-[95%] md:w-3/12 p-12 bg-black my-[45%] md:my-28 mx-auto right-0 left-0 text-white rounded-md opacity-85"
+        className="w-[95%] md:w-3/12 p-12 bg-black my-[45%] md:my-28 mx-auto right-0 left-0 text-white rounded-md opacity-85"
       >
         <h1 className="text-2xl md:text-3xl font-bold py-4">
           {signIn ? "Sign In" : "Sign up"}
@@ -131,7 +133,12 @@ const Login = () => {
           {signIn ? "new to NetflixGpt? sign up now" : "Already User? Sign In"}
         </p>
       </form>
+      </div>
+      
+        <Footer/>
+      
     </div>
+    
   );
 };
 

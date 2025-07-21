@@ -6,6 +6,7 @@ import { addGptMovies } from "../utils/gptSlice";
 
 const GptSearchBar = () => {
   const langkey = useSelector((store) => store.config.lang);
+  const contentFilter = useSelector((store) => store.movies.contentFilter);
   const searchText = useRef(null);
   const dispatch = useDispatch();
   // const handleGptSearchClick = async () => {
@@ -21,7 +22,7 @@ const GptSearchBar = () => {
     const data = await fetch(
       "https://api.themoviedb.org/3/search/movie?query=" +
         movie +
-        "&include_adult=true&language=en-US&page=1",
+        "&include_adult="+contentFilter+"&language=en-US&page=1",
       API_OPTIONS
     );
     const json = await data.json();
