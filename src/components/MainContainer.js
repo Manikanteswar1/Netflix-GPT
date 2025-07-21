@@ -6,7 +6,7 @@ import VideoBackground from "./VideoBackground";
 const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if (!movies) return;
-  const mainMovie = movies[3];
+  const mainMovie = movies[5];  //trailer video array
   const { original_title, overview, id } = mainMovie;
   return (
     <div className="pt-[30%] md:pt-0 bg-black">
