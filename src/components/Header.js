@@ -57,7 +57,7 @@ const Header = () => {
       {user && (
         <div className="flex justify-around">
           {showGptSearch && <select
-            className="px-3 m-2 md:m-5 bg-gray-900 text-white"
+            className="px-3 m-2 md:m-5 bg-gray-900 text-white rounded-md"
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -67,7 +67,7 @@ const Header = () => {
             ))}
           </select>}
           <button
-            className="px-2 m-2 md:m-5  bg-purple-800 text-white rounded-lg"
+            className="px-2 m-2 md:m-5  bg-purple-800 text-white rounded-md"
             onClick={handleGptSearchClick}
           >
            {showGptSearch ? "Homepage" : "Gpt Search"}
