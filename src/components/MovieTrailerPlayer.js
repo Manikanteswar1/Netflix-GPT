@@ -36,7 +36,7 @@ const MovieTrailerPlayer = ({ movieid }) => {
     <div className="w-full aspect-video mb-4 ">
       <iframe
         className="w-full h-full"
-        src={"https://www.youtube.com/embed/"+trailerKey+"?autoplay=1&mute=1&rel=0"}
+        src={"https://www.youtube.com/embed/"+trailerKey+"?autoplay=1&mute=0&rel=0"}
         title="Trailer"
         allow="autoplay; encrypted-media"
         allowFullScreen

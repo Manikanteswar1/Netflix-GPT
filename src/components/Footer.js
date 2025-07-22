@@ -9,7 +9,7 @@ const Footer = () => {
         </p>
         <p className="text-sm">
           Developed by <a 
-            href="https://github.com/Manikanteswar1" 
+            href="https://manikanteswar1.github.io/Portfolio/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-red-500 font-semibold hover:text-red-400 transition-colors underline"
