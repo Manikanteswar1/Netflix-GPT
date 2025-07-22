@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
 
-export const GptMovieSuggestions = () => {
+export const GptMovieSuggestions = ({ onMovieClick }) => {
   const gptResults = useSelector((store) => store.gpt);
   const { movieNames, gptMovies } = gptResults;
   if (!movieNames) return;
@@ -14,9 +14,12 @@ export const GptMovieSuggestions = () => {
           key={movieName}
           movies={gptMovies[index]} 
           title={movieName}
+          onMovieClick={onMovieClick}
         />
         
       ))}
+
+      
 
     </div>
     </div>
