@@ -32,9 +32,9 @@ const MovieList = ({ title, movies }) => {
             <MovieTrailerPlayer movieid={selectedMovieId} />
             <button
               onClick={() => setSelectedMovieId(null)}
-              className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded"
+              className="absolute -bottom-4 right-3 md:top-2 md:bottom-auto bg-red-600 text-white px-3 py-1 rounded bg-opacity-40 opacity-90"
             >
-              ✕
+              Close
             </button>
           </div>
         </div>

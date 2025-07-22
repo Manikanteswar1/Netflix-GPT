@@ -47,7 +47,7 @@ const GptSearchPage = () => {
           </div>
         )}
       </div>
-      <button onClick={setContentFliter}>{contentFilter ? "off" : "on"}</button>
+      <button className="w-10" onClick={setContentFliter}>{contentFilter ? "off" : "on"}</button>
       <Footer />
     </div>
   );

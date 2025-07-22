@@ -19,6 +19,7 @@ const MovieTrailerPlayer = ({ movieid }) => {
         );
         const data = await res.json();
         const trailers = data.results?.filter((v) => v.type === "Trailer");
+        console.log(trailers);
         const trailer = trailers?.[0] || data.results?.[0];
         setTrailerKey(trailer?.key);
       } catch (err) {
