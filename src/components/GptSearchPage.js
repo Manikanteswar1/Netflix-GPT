@@ -41,13 +41,13 @@ const GptSearchPage = () => {
                 onClick={() => setSelectedMovieId(null)}
                 className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded"
               >
-                ✕
+                Close
               </button>
             </div>
           </div>
         )}
       </div>
-      <button className="w-10" onClick={setContentFliter}>{contentFilter ? "off" : "on"}</button>
+      <button className="w-10" onClick={setContentFliter}>{contentFilter ? "|" : "__"}</button>
       <Footer />
     </div>
   );
