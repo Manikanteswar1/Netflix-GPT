@@ -16,11 +16,12 @@ A smart movie recommendation web app that blends the Netflix UI experience with 
 - **Frontend**: React, Redux Toolkit, Tailwind CSS
 - **APIs**: TMDB, Gemini (OpenAI)
 - **Authentication**: Firebase Auth
+- **Video Player**: Embedded YouTube iframe
 - **Deployment**: Firebase Hosting
 
 ## 🔗 Live Demo & GitHub
 
-- 🔴 Live: [Netflix GPT](https://netflix-gpt-jkjw.onrender.com)
+- 🔴 Live: [Netflix GPT](https://netflixgpt-4b82a.web.app)
 - 📂 Code: [GitHub Repo](https://github.com/Manikanteswar1/netflix-gpt)
 
 
