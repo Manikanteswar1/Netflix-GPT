@@ -4,22 +4,41 @@ import useMovieProviders from "../hooks/useMovieProvider";
 
 const MovieTrailerPlayer = ({ movieid }) => {
   const [trailerKey, setTrailerKey] = useState(null);
-  const providers = useMovieProviders(movieid);
   const [trailerNotFound, setTrailerNotFound] = useState(false);
+  const providers = useMovieProviders(movieid);
+
+  const fetchTrailers = async (lang = "") => {
+    const url = "https://api.themoviedb.org/3/movie/"+movieid+"/videos"+(lang ? "?language="+lang :  "");
+    const res = await fetch(url, API_OPTIONS);
+    const data = await res.json();
+    return data?.results || [];
+  };
 
   const getTrailer = async () => {
     try {
-      const res = await fetch(
-        "https://api.themoviedb.org/3/movie/" + movieid + "/videos",
-        API_OPTIONS
+      let videos = await fetchTrailers("te"); //1st api call for telugu trailer
+
+      if (videos.length === 0) {
+        videos = await fetchTrailers(); // 2nd api call if telugu trailer not found
+      }
+
+      if (!videos || videos.length === 0) {
+        setTrailerNotFound(true);
+        return;                        // return if no data found
+      }
+
+      const teluguTrailer = videos.find(
+        (video) => video.type === "Trailer" && video.iso_639_1 === "te"
       );
-      const data = await res.json();
-      const trailers = data.results?.filter(
-        (video) => video.type === "Trailer"
-      );
-      const trailer = trailers?.[0] || data.results?.[0]; //if no trailer we push 1st video from data
-      if (trailer?.key) {
-        setTrailerKey(trailer.key);
+
+      const generalTrailer = videos.find((video) => video.type === "Trailer");
+
+      const fallback = videos[0];
+
+      const finalTrailer = teluguTrailer || generalTrailer || fallback;
+
+      if (finalTrailer?.key) {
+        setTrailerKey(finalTrailer.key);
       } else {
         setTrailerNotFound(true);
       }
@@ -28,26 +47,21 @@ const MovieTrailerPlayer = ({ movieid }) => {
       setTrailerNotFound(true);
     }
   };
+
   useEffect(() => {
     setTrailerKey(null);
     setTrailerNotFound(false);
-    // Prevent API call if movieid is not provided
     if (!movieid) return;
 
     getTrailer();
   }, [movieid]);
 
   return (
-    // trailer section
-    <div className="w-full aspect-video mb-4 ">
+    <div className="w-full aspect-video mb-4">
       {trailerKey ? (
         <iframe
-          className="w-full h-full"
-          src={
-            "https://www.youtube.com/embed/" +
-            trailerKey +
-            "?autoplay=1&mute=0&rel=0"
-          }
+          className="w-full h-full rounded-md"
+          src={`https://www.youtube.com/embed/${trailerKey}?autoplay=1&mute=0&rel=0`}
           title="Trailer"
           allow="autoplay; encrypted-media"
           allowFullScreen
@@ -57,10 +71,11 @@ const MovieTrailerPlayer = ({ movieid }) => {
           Trailer not Updated
         </div>
       ) : null}
-      {/* OTT Providers Section  */}
+
+      {/* OTT Providers Section */}
       {providers?.length > 0 && (
-        <div className="mt-4 bg-black bg-opacity-60 p-3 rounded-lg">
-          <p className="text-white text-sm mb-2">Full Movie Available on :</p>
+        <div className="bg-black bg-opacity-80 p-3 rounded-lg opacity-70">
+          <p className="text-white text-sm mb-2">Full Movie Available on:</p>
           <div className="flex gap-3">
             {providers.map((provider) => (
               <img

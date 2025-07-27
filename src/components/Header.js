@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <div className="absolute flex w-screen sm:px-8 py-2 bg-gradient-to-b from-black z-10 justify-between flex-col md:flex-row">
-      <img className="w-60 h-20 mx-auto md:mx-0" src="/LogoNetflixgpt.png" alt="logo" />
+      <img className="w-60 h-20 mx-auto md:mx-0" src="/LogoMovieGPT.png" alt="logo" />
       
 
       {user && (

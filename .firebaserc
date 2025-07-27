@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "netflixgpt-4b82a"
-  }
+    "default": "moviegpt-92713",
+    "moviegpt": "moviegpt-92713"
+  },
+  "targets": {},
+  "etags": {}
 }

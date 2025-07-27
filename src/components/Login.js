@@ -130,7 +130,7 @@ const Login = () => {
           {signIn ? "Sign In" : "Sign up"}
         </button>
         <p className="py-4 cursor-pointer" onClick={toggleSignForm}>
-          {signIn ? "new to NetflixGpt? sign up now" : "Already User? Sign In"}
+          {signIn ? "new to MovieGPT? sign up now" : "Already User? Sign In"}
         </p>
       </form>
       </div>

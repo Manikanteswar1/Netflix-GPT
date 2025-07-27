@@ -1,6 +1,6 @@
 {
-  "short_name": "Netflix GPT",
-  "name": "Netflix - GPT",
+  "short_name": "MovieGPT",
+  "name": "MovieGPT",
   "icons": [
     {
       "src": "favicon.ico",

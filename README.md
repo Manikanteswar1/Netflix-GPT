@@ -1,6 +1,6 @@
-# Netflix GPT 🎬🤖
+# MovieGPT 🎬🤖
 
-A smart movie recommendation web app that blends the Netflix UI experience with the power of OpenAI Gemini and TMDB APIs. Users can search for movies and receive intelligent suggestions, view in-page trailers, and enjoy seamless, responsive performance.
+A smart movie recommendation web app that blends the MovieGPT UI experience with the power of OpenAI Gemini and TMDB APIs. Users can search for movies and receive intelligent suggestions, view in-page trailers, and enjoy seamless, responsive performance.
 
 ## 🚀 Features
 
@@ -21,7 +21,7 @@ A smart movie recommendation web app that blends the Netflix UI experience with 
 
 ## 🔗 Live Demo & GitHub
 
-- 🔴 Live: [Netflix GPT](https://netflixgpt-4b82a.web.app)
+- 🔴 Live: [MovieGPT](https://moviegpt-92713.web.app/)
 - 📂 Code: [GitHub Repo](https://github.com/Manikanteswar1/netflix-gpt)
 
 

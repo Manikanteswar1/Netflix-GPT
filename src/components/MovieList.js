@@ -26,7 +26,7 @@ const MovieList = ({ title, movies }) => {
 
       {selectedMovieId && (
         <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
-          <div className="relative w-full max-w-3xl aspect-video translate-y-[-180px] md:translate-y-0"
+          <div className="relative w-full max-w-3xl aspect-video translate-y-[-150px] md:translate-y-0"
           onClick={(e) => e.stopPropagation()}
           >
             <MovieTrailerPlayer movieid={selectedMovieId} />
